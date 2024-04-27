@@ -8,7 +8,7 @@ My implementation of the algorithm will attempt to find a queue containing all p
 
 My implementation does not support 'attempting' allocations within the program, however, by passing the program a 'state' file which already has the resources allocated to check if the system would be in a safe state if the allocation were to occur. The return from the program would then have to be parsed from standard output, which is outside of the scope of this project. The program uses malloc to create 2d and 1d arrays of needed size to adapt to different needs, depending on the system state configured in the input file, which is passed as the last argument to the compiled binary. This 'hybrid tab file' is parsed into the arrays, and then processed to determine the 'saftey' of the system state. No configuration is needed for this program outside of creating the input file which stores your system state, and parsing the output from it. 
 
-# Usage
+# Usage (on linux system)
 Clone the github repository into a local directory on your system:
 ```
 git clone https://github.com/AlexTregub/bankersDeadlockAlgorithm
@@ -67,4 +67,6 @@ Example outputs of this program are included in sampleRun.log and sampleDebugRun
 
 Two seperate 'types' of outputs are provided: a step by step 'simulation' of the system state, which 'highlights' (shown by a >> in each simulation frame) the process to be executed at the current step, and then in the next step assumes that the program completed its execution, and updates the available resources array. Additionally, the program outputs a 'summary' of the steps of execution, labeled by P#, where # is the index of the process starting from 0 in the input file's 2d arrays. (How the program 'sees' the input file is the first 'simulation' frame, which can help with debugging issues with your input file - visible when system is run from either script)
 
-If the system is in an unsafe state, however, the program will only output the initial 'simulation' frame and the statement 'System is not in a safe state.'. 
+If the system is in an unsafe state, however, the program will only output the initial 'simulation' frame and the statement 'System is not in a safe state.'.
+
+The header for outputs of the 'simulation' frames may look warped if different sized arrays are used for the input file, however, actual output for P0-Pn will be consistent. 
