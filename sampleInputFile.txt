@@ -11,5 +11,5 @@ System maximum allocatable resources (n*m)
 9	0	2
 2	2	2
 4	3	3
-System available resources (n*m)
+System available resources (1*m)
 3	3	2
